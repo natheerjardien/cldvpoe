@@ -1,0 +1,16 @@
+﻿/* created my own css file so that i can apply a background image without interferring with the bootstrap or site css files */
+
+/* this stretches the images acrss the page */
+html, body { 
+    height: 100%;
+    margin: 0;
+}
+
+/* sets the background image */
+body {
+    background-image: url("/Images/Background2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

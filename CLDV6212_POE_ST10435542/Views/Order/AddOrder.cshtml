@@ -1,0 +1,57 @@
+﻿@model CLDV6212_POE_ST10435542.Models.OrderViewModel
+
+@{
+    var customers = ViewData["Customer"] as List<CLDV6212_POE_ST10435542.Models.Customer>;
+    var products = ViewData["Product"] as List<CLDV6212_POE_ST10435542.Models.Product>;
+}
+
+@* I made use of Razor View to generate this view and made minor tweaks to my liking *@
+
+<p></p>
+<h1>Order Management</h1>
+<p></p>
+<h4>Add New Order</h4>
+<hr />
+
+@if (customers == null || customers.Count == 0 || products == null || products.Count == 0)
+{
+    <div class="alert alert-warning">
+        No customers or products available. Please ensure they are added first.
+    </div>
+}
+else
+{
+    <form asp-action="AddOrder" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="CustomerID" class="control-label"></label>
+            <select asp-for="CustomerID" class="form-control" asp-items="@(new SelectList((List<Customer>)ViewData["Customer"], "CustomerID", "FirstName"))"> @* populates the dropdown with all the customers by CustomerID, but shows the Customers names for easier identification *@
+                <option value="">-- Select Customer --</option>
+            </select>
+            <span asp-validation-for="CustomerID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductID" class="control-label"></label>
+            <select asp-for="ProductID" class="form-control" asp-items="@(new SelectList((List<Product>)ViewData["Product"], "ProductID", "ProductName"))"> @* populates the dropdown with all the product by ProductID, but shows the Products names for easier identification *@
+                <option value="">-- Select Product --</option>
+            </select>
+            <span asp-validation-for="ProductID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="OrderDate" class="control-label">Scheduled for:</label>
+            <input asp-for="OrderDate" type="date" class="form-control" />
+            <span asp-validation-for="OrderDate" class="text-danger"></span>
+        </div>
+        <p></p>
+        <div>
+            <input type="submit" value="Submit Order" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </form>
+}
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

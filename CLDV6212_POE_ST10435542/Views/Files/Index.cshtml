@@ -1,0 +1,79 @@
+﻿@model List<CLDV6212_POE_ST10435542.Models.FileModel>
+
+<p></p>
+<h1>File Management</h1>
+<p></p>
+<h4>Contracts🗂️</h4>
+<hr />
+
+@* As demonstarted by IIEVC School of Computer Science (2025), ive structured this Index View to display an upload file action, as well as displaying all the uploaded files in a List *@
+
+<!-- Display any messages -->
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["Message"]
+    </div>
+}
+
+@{ 
+    @* by using ViewBag it made populating the list easier because ive defined a viewbag in the controller that links to the LastModified property and assigned the date ranges to it *@
+    var selectedToday = ViewBag.SelectedDateFilter == "today" ? "selected" : "";
+    var selectedWeek = ViewBag.SelectedDateFilter == "week" ? "selected" : "";
+    var selectedMonth = ViewBag.SelectedDateFilter == "month" ? "selected" : "";
+}
+
+<form method="get" asp-action="Index">
+    <div class="form-group">
+        <label>Filter by Date:</label>
+        <select name="dateFilter" class="form-control">
+            <option value="">All</option>
+@* According to StackOverflow (2016), this is the structure needed to display a ViewBag in a select list, as an option value *@
+            <option value="today" selected="@(ViewBag.SelectedDateFilter == "today" ? "selected" : null)">Today</option>
+            <option value="week" selected="@(ViewBag.SelectedDateFilter == "week" ? "selected" : null)">This Week</option>
+            <option value="month" selected="@(ViewBag.SelectedDateFilter == "month" ? "selected" : null)">This Month</option>
+        </select>
+        <p></p>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
+<!-- Upload form -->
+<form asp-action="UploadFile" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file"> Choose a File to Upload: </label>
+        <input type="file" name="file" class="form-control" />
+        <p></p>
+        <button type="submit" class="btn btn-primary"> Upload </button>
+    </div>
+</form>
+
+<!-- Display uploaded files -->
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var file in Model)
+        {
+            <li style="color: orangered">
+                @file.Name -
+                Size: @file.DisplaySize -
+                Last Modified: @file.LastModified?.ToString("g")
+                - <a asp-action="DownloadFile" asp-route-fileName="@file.Name" class="btn btn-secondary"> Download </a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p> No files found or model is null. </p>
+}
+
+@* References:
+
+IIEVC School of Computer Science, 2025. CLDV6212 ASP.NET MVC & Azure Series - Part 4: Mastering Azure File Share!. [video online]
+Available at: <https://youtu.be/A-mVVL88oEg?si=eIL4gyih_S6aWw2a> [Accessed 21 August 2025].
+
+StackOverflow, 2016. Populate Select using ViewBag without using html Helper. [online]
+Available at: <https://stackoverflow.com/questions/39755802/populate-select-using-viewbag-without-using-html-helper> [Accessed 23 August 2025].
+
+*@
