@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="cldv6212st10435542poe" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\user\\OneDrive\ -\ ADvTECH\ Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>

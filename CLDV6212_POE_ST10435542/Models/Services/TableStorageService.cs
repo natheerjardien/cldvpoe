@@ -15,7 +15,7 @@ namespace CLDV6212_POE_ST10435542.Models.Services
         {
             _customerTableClient = new TableClient(connectionString, "Customers");
             //_orderTableClient.CreateIfNotExists(); // creates the Customers table if it does not exist
-            _productTableClient = new TableClient(connectionString, "Product");
+            _productTableClient = new TableClient(connectionString, "Products");
             //_productTableClient.CreateIfNotExists(); // creates the Products table if it does not exist
             _orderTableClient = new TableClient(connectionString, "Orders"); // used for orders
             //_orderTableClient.CreateIfNotExists(); // creates the Orders table if it does not exist

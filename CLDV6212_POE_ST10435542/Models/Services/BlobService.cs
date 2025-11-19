@@ -1,5 +1,6 @@
-﻿using Azure.Storage.Blobs.Models;
-using Azure.Storage.Blobs;
+﻿using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
+using System.ComponentModel;
 
 namespace CLDV6212_POE_ST10435542.Models.Services
 {
@@ -8,33 +9,40 @@ namespace CLDV6212_POE_ST10435542.Models.Services
     public class BlobService
     {
         private readonly BlobServiceClient _blobServiceClient;
-        private readonly string _containerName = "product";
+        private readonly string _containerName = "Products";
 
         public BlobService(string connectionString)
         {
             _blobServiceClient = new BlobServiceClient(connectionString);
         }
 
-        public async Task<string> UploadAsync(Stream fileStream, string fileName) // upoads image to blob storage
+        public async Task<string> UploadAsync(IFormFile file, string containerName, string fileName) // upoads image to blob storage
         {
-            var containerClient = _blobServiceClient.GetBlobContainerClient(_containerName);
+            var containerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+            await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
+
             var blobClient = containerClient.GetBlobClient(fileName);
 
-            await blobClient.UploadAsync(fileStream);
+            using var stream = file.OpenReadStream();
+            await blobClient.UploadAsync(stream, overwrite: true);
+
             return blobClient.Uri.ToString();
         }
 
         public async Task DeleteBlobAsync(string blobUri)
         {
-            Uri uri = new Uri(blobUri);
-            string blobName = uri.Segments[^1];
-            var containerClient = _blobServiceClient.GetBlobContainerClient(_containerName);
-            var blobClient = containerClient.GetBlobClient(blobName);
+            if (string.IsNullOrEmpty(blobUri)) return;
 
+            Uri uri = new Uri(blobUri);
+            var segments = uri.Segments;
+            var blobName = segments.Last();
+
+            var containerClient = _blobServiceClient.GetBlobContainerClient("productimages");
+            var blobClient = containerClient.GetBlobClient(blobName);
             await blobClient.DeleteIfExistsAsync(DeleteSnapshotsOption.IncludeSnapshots);
         }
 
-        public BlobContainerClient GetBlobContainer()
+        public BlobContainerClient GetBlobContainer(string containerName)
         {
             return _blobServiceClient.GetBlobContainerClient(_containerName);
         }

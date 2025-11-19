@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "CLDV6212POE_Functions": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7291",
-      "launchBrowser": false
-    }
-  }
-}

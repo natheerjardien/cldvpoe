@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing.Constraints;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc;
+using System.Configuration;
 using System.IO;
 using System.Net.Http.Headers;
 using System.Text;
@@ -17,23 +18,53 @@ namespace CLDV6212_POE_ST10435542.Controllers
     public class ProductController : Controller
     {
         private readonly HttpClient _httpClient; // used to send http requests to azure functions
-        private readonly BlobService _blobService; // used to handle image uploads and deletions in azure blob storage
+        private readonly BlobService _blobService;
+        private readonly TableStorageService _tableStorageService;
         private readonly string _functionBaseUrl; // stores the base url for azure functions api
 
-        public ProductController(BlobService blobService, IHttpClientFactory httpClientFactory)
+        public ProductController(IHttpClientFactory httpClientFactory, BlobService blobService, TableStorageService tableStorageService, IConfiguration configuration)
         {
-            _blobService = blobService;
             _httpClient = httpClientFactory.CreateClient();
-            _functionBaseUrl = Environment.GetEnvironmentVariable("ProductFunctionBaseUrl") ?? "http://localhost:7291/api"; // gets the base url from environment variable or uses local fallback
+            _blobService = blobService;
+            _tableStorageService = tableStorageService;
+            _functionBaseUrl = configuration.GetValue<string>("AzureFunctionSettings:BaseUrl") ?? "http://localhost:7291/api";
+        }
+
+        private void PopulateDropdowns(Product? product = null)
+        {
+            ViewBag.Categories = new List<string> { "Electronics", "Clothing", "Home & Kitchen", "Outdoor" };
+
+            ViewBag.AvailabilityStatuses = new List<string>
+            {
+                "In Stock",
+                "Out of Stock",
+                "Pre-Order"
+            };
         }
 
         public async Task<IActionResult> Index()
         {
-            var response = await _httpClient.GetAsync($"{_functionBaseUrl}/GetAllProducts"); // calls the function to get all products
-            response.EnsureSuccessStatusCode();
-
-            var json = await response.Content.ReadAsStringAsync(); // reads the response content as a string
-            var products = JsonSerializer.Deserialize<List<Product>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true }); // deserializes the JSON response to a list of products
+            List<Product> products = new List<Product>();
+            try
+            {
+                var response = await _httpClient.GetAsync($"{_functionBaseUrl}/GetAllProducts");
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    products = JsonSerializer.Deserialize<List<Product>>(jsonResponse, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+                }
+                else
+                {
+                    TempData["Error"] = $"Error fetching products from Function: {response.ReasonPhrase}";
+                }
+            }
+            catch (Exception ew)
+            {
+                TempData["Error"] = "Exception occurred while fetching products: " + ew.Message;
+            }
 
             return View(products); // returns the view with the list of products
         }
@@ -41,57 +72,151 @@ namespace CLDV6212_POE_ST10435542.Controllers
         [HttpGet]
         public IActionResult AddProduct()
         {
-            ViewData["Categories"] = new List<string> { "ELectronics", "Clothing", "Home & Kitchen", "Outdoor" }; // populated the dropdown lists with the categories so that it can be used in the AddProduct View
-            ViewData["Availability"] = new List<string> { "In Stock", "Out of Stock", "Pre-Order" }; // populated the dropdown lists with the avaialbility statuses so that it can be used in the AddProduct View
+            PopulateDropdowns();
 
             var product = new Product();
 
             return View(product);
         }
         [HttpPost]
-        public async Task<IActionResult> AddProduct(Product product, IFormFile file)
+        public async Task<IActionResult> AddProduct(Product product)
         {
-            if (file != null && file.Length > 0)
+            ModelState.Remove(nameof(product.ImageUrl));
+            ModelState.Remove(nameof(product.PartitionKey));
+            ModelState.Remove(nameof(product.RowKey));
+
+            if (!ModelState.IsValid || product.ImageFile == null || product.ImageFile.Length == 0)
             {
-                // uploads the file to blob directly
-                using var stream = file.OpenReadStream();
-                product.ImageUrl = await _blobService.UploadAsync(stream, file.FileName);
+                PopulateDropdowns();
+                TempData["Error"] = "Validation failed. Please select an image and check all required fields.";
+                return View(product);
             }
 
-            var productJson = JsonSerializer.Serialize(product); // serializes the product object to JSON
-            var content = new StringContent(productJson, Encoding.UTF8, "application/json"); // creates a StringContent object with the JSON content
+            try
+            {
+                var rowKey = Guid.NewGuid().ToString();
+                var nextId = await _tableStorageService.IncrementProductID();
 
-            var response = await _httpClient.PostAsync($"{_functionBaseUrl}/AddProduct", content); // calls the function to add a new product
-            response.EnsureSuccessStatusCode(); // throws an exception if the response shows an error
+                string containerName = "productimages";
+                string fileName = $"{rowKey}_{Path.GetFileName(product.ImageFile.FileName)}";
 
-            ViewData["Categories"] = new List<string> { "ELectronics", "Clothing", "Home & Kitchen", "Outdoor" }; // repopulated the dropdown lists with the categories in the case of validation erros
-            ViewData["Availability"] = new List<string> { "In Stock", "Out of Stock", "Pre-Order" }; // repopulated the dropdown lists with the avaialbility statuses
+                // This call uploads the file stream and returns the public URL
+                string imageUrl = await _blobService.UploadAsync(product.ImageFile, containerName, fileName);
 
-            return RedirectToAction("Index");
+                if (string.IsNullOrEmpty(imageUrl))
+                {
+                    TempData["Error"] = "Image upload failed. Cannot proceed.";
+                    return View(product);
+                }
+
+                var productDto = new ProductTableEntity
+                {
+                    ProductID = nextId,
+                    ProductName = product.ProductName,
+                    ProductDescription = product.Description,
+                    Category = product.Category,
+                    AvailabilityStatus = product.AvailabilityStatus,
+                    ImageUrl = imageUrl, // sends the URL
+                    PartitionKey = "ProductsPartition",
+                    RowKey = rowKey
+                };
+
+                var json = JsonSerializer.Serialize(productDto);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync($"{_functionBaseUrl}/AddProduct", content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    TempData["Error"] = $"Failed to add product via Function: {errorContent}";
+
+                    return View(product);
+                }
+
+                TempData["Message"] = "Product added successfully!";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                PopulateDropdowns();
+                TempData["Error"] = $"An exception occurred: {ex.Message}";
+                return View(product);
+            }
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteProduct(string partitionKey, string rowKey, Product product)
+        public async Task<IActionResult> DeleteProduct(string partitionKey, string rowKey)
         {
-            var response = await _httpClient.DeleteAsync($"{_functionBaseUrl}/DeleteProduct?partitionKey={partitionKey}&rowKey={rowKey}"); // calls the function to delete the specific product
-            response.EnsureSuccessStatusCode();
+            try
+            {
+                // 1. Get the product from the Azure Function or Table Storage directly
+                var response = await _httpClient.GetAsync($"{_functionBaseUrl}/GetProduct?partitionKey={partitionKey}&rowKey={rowKey}");
+                if (!response.IsSuccessStatusCode)
+                {
+                    TempData["Error"] = $"Product not found: {response.ReasonPhrase}";
+                    return RedirectToAction("Index");
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+                var product = JsonSerializer.Deserialize<Product>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (product == null)
+                {
+                    TempData["Error"] = "Product not found.";
+                    return RedirectToAction("Index");
+                }
+
+                // 2. Delete the blob if it exists
+                if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    await _blobService.DeleteBlobAsync(product.ImageUrl);
+                }
+
+                // 3. Delete the product from the Azure Function/Table Storage
+                var deleteResponse = await _httpClient.DeleteAsync($"{_functionBaseUrl}/DeleteProduct?partitionKey={partitionKey}&rowKey={rowKey}");
+
+                if (deleteResponse.IsSuccessStatusCode)
+                {
+                    TempData["Message"] = "Product and its image deleted successfully!";
+                }
+                else
+                {
+                    var errorContent = await deleteResponse.Content.ReadAsStringAsync();
+                    TempData["Error"] = $"Error deleting product: {deleteResponse.ReasonPhrase}. Details: {errorContent}";
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Exception occurred while deleting product: " + ex.Message;
+            }
 
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> ViewProduct(string partitionKey, string rowKey) // method for viewing a specific customer (view their details)
         {
-            var response = await _httpClient.GetAsync($"{_functionBaseUrl}/GetProduct?partitionKey={partitionKey}&rowKey={rowKey}"); // calls the function to get the specific product
-            
-            if (!response.IsSuccessStatusCode)
+            try
             {
-                return NotFound();
+                var response = await _httpClient.GetAsync($"{_functionBaseUrl}/GetProduct?partitionKey={partitionKey}&rowKey={rowKey}"); // calls the function to get the specific product
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return NotFound();
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+                var product = JsonSerializer.Deserialize<Product>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                return View(product); // returns the view with the customer details
             }
-
-            var json = await response.Content.ReadAsStringAsync();
-            var product = JsonSerializer.Deserialize<Product>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            return View(product); // returns the view with the customer details
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving product details: {ex.Message}");
+            }
         }
 
         [HttpGet]
@@ -107,60 +232,61 @@ namespace CLDV6212_POE_ST10435542.Controllers
             var json = await response.Content.ReadAsStringAsync();
             var product = JsonSerializer.Deserialize<Product>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            ViewData["Categories"] = new List<string> { "Electronics", "Clothing", "Home & Kitchen", "Outdoor" }; // populated the dropdown lists with the categories so that it can be used in the EditProuct View
-            ViewBag.AvailabilityStatuses = new List<SelectListItem> // used ViewBag instead of ViewData because it was not bidning AvailabilityStatuses correctly when it cam to editing products
-            { // predefined the availability statuses for the dropdown list so that i can reference it in the EditProduct View
-                new SelectListItem { Value = "Available", Text = "Available"},
-                new SelectListItem { Value = "Out of Stock", Text = "Out of Stock"},
-                new SelectListItem { Value = "Pre-Order", Text = "Pre-Order"},
-            };
+            PopulateDropdowns(product);
 
             return View(product); // returns the view with the product details for editing
         }
         [HttpPost]
-        public async Task<IActionResult> EditProduct(string partitionKey, string rowKey, IFormFile? imageFile, Product updatedProduct)
+        public async Task<IActionResult> EditProduct(IFormFile? imageFile, Product product)
         {
+            if (!ModelState.IsValid)
+            {
+                PopulateDropdowns(product);
+                TempData["Error"] = "Please ensure all required fields are filled in.";
+                return View(product);
+            }
+
             try
             {
-                var response = await _httpClient.GetAsync($"{_functionBaseUrl}/GetProduct?partitionKey={partitionKey}&rowKey={rowKey}"); // calls the function to get the specific product
-                response.EnsureSuccessStatusCode();
+                // FIX: Bundle metadata and optional new file into MultipartFormDataContent for the Function
+                using var content = new MultipartFormDataContent();
 
-                var json = await response.Content.ReadAsStringAsync();
-                var existingProduct = JsonSerializer.Deserialize<Product>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                
-                if (existingProduct == null)
-                {
-                    return NotFound();
-                }
-
+                // 1. Add new file (if present)
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    using var stream = imageFile.OpenReadStream();
-                    updatedProduct.ImageUrl = await _blobService.UploadAsync(stream, imageFile.FileName);
+                    var fileStreamContent = new StreamContent(imageFile.OpenReadStream());
+                    content.Add(fileStreamContent, "imageFile", imageFile.FileName);
+                }
 
-                    if (!string.IsNullOrEmpty(existingProduct.ImageUrl))
-                    {
-                        await _blobService.DeleteBlobAsync(existingProduct.ImageUrl); // deletes the old image if a new one is uploaded
-                    }
+                // 2. Add product metadata, including PK/RK needed for the update in the Function
+                content.Add(new StringContent(product.PartitionKey ?? ""), "PartitionKey");
+                content.Add(new StringContent(product.RowKey ?? ""), "RowKey");
+                content.Add(new StringContent(product.ProductName ?? ""), "ProductName");
+                content.Add(new StringContent(product.Category ?? ""), "Category");
+                content.Add(new StringContent(product.Description ?? ""), "Description");
+                content.Add(new StringContent(product.AvailabilityStatus.ToString()), "AvailabilityStatus");
+
+                var response = await _httpClient.PutAsync($"{_functionBaseUrl}/UpdateProduct", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    TempData["Message"] = "Product updated successfully using Azure Function ;)";
                 }
                 else
                 {
-                    updatedProduct.ImageUrl = existingProduct.ImageUrl; // keeps the old image if no new one is uploaded
+                    PopulateDropdowns(product);
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    TempData["Error"] = $"Error updating product via Function: {response.ReasonPhrase}. Details: {errorContent}";
+                    return View(product);
                 }
-
-                updatedProduct.PartitionKey = existingProduct.PartitionKey; // ensures the PartitionKey remains unchanged
-                updatedProduct.RowKey = existingProduct.RowKey; // ensures the RowKey remains unchanged
-
-                var productJson = JsonSerializer.Serialize(updatedProduct);
-                var content = new StringContent(productJson, Encoding.UTF8, "application/json");
-
-                var updatedResponse = await _httpClient.PutAsync($"{_functionBaseUrl}/UpdateProduct?partitionKey={partitionKey}&rowKey={rowKey}", content); // calls the function to update the specific product
-                response.EnsureSuccessStatusCode();
             }
-            catch (HttpRequestException ex)
+
+            catch (Exception ex)
             {
-                return StatusCode(500, $"Error updating product:ex.Message");
-            }
+                PopulateDropdowns(product);
+        TempData["Error"] = "Exception occurred calling Azure Function: " + ex.Message;
+                return View(product);
+    }
 
             return RedirectToAction("Index"); // redirects to the Index action to view the updated product list
         }
