@@ -1,0 +1,76 @@
+﻿@model CLDV6212_POE_ST10435542.Models.Product
+
+@{
+    ViewData["Title"] = "AddProduct";
+}
+
+@* I made use of Razor View to generate this view and made minor tweaks to my liking *@
+
+<p></p>
+<h1>Product Inventory</h1>
+<p></p>
+<h4>Add New Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Product" asp-action="AddProduct" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PartitionKey" /> @* included these hidden properties because they are key elements tied to each product, else if not included, the procut will not be saved to the table *@
+            <input type="hidden" asp-for="RowKey" />
+
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label">Product Name</label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>-- Image --</label>
+                <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Category)
+                @Html.DropDownListFor(
+                m => m.Category,
+                                new SelectList(ViewBag.Categories, Model?.Category),
+                                "-- Select Category --",
+                                new { @class = "form-control" }
+                                )
+                @Html.ValidationMessageFor(m => m.Category)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.AvailabilityStatus)
+                @Html.DropDownListFor(
+                                m => m.AvailabilityStatus,
+                                new SelectList(ViewBag.AvailabilityStatuses, Model?.AvailabilityStatus),
+                                "-- Select Status --",
+                                new { @class = "form-control" }
+                                )
+                @Html.ValidationMessageFor(m => m.AvailabilityStatus)
+            </div>
+            <p></p>
+            <div>
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">@TempData["Message"]</div>
+    }
+}
