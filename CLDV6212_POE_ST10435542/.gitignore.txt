@@ -1,0 +1,20 @@
+# Visual Studio folders
+.vs/
+bin/
+obj/
+Debug/
+Release/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output
+/publish/
+/out/
+
+# Azure Functions local files
+local.settings.json
+*.db

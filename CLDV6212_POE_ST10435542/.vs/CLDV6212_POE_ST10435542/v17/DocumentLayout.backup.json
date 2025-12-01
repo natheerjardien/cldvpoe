@@ -1,0 +1,379 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\models\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\models\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\models\\services\\tablestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\models\\services\\tablestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212poe_functions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|solutionrelative:cldv6212poe_functions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212poe_functions\\productfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|solutionrelative:cldv6212poe_functions\\productfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\views\\product\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\views\\product\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212poe_functions\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|solutionrelative:cldv6212poe_functions\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\models\\services\\blobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\models\\services\\blobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\views\\product\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\views\\product\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\views\\product\\viewproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\views\\product\\viewproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212_poe_st10435542\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D316C7ED-D492-44ED-BFFE-506CADB284C3}|CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542.csproj|solutionrelative:cldv6212_poe_st10435542\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212poe_functions\\orderfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|solutionrelative:cldv6212poe_functions\\orderfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|c:\\users\\user\\onedrive - advtech ltd\\desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\cldv6212_poe_st10435542\\cldv6212poe_functions\\filefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44069DC0-E67A-4372-B096-1AEBDE84A626}|CLDV6212POE_Functions\\CLDV6212POE_Functions.csproj|solutionrelative:cldv6212poe_functions\\filefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 24,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\User.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\User.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:33:25.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:43:41.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\ProductFunctions.cs",
+              "RelativeDocumentMoniker": "CLDV6212POE_Functions\\ProductFunctions.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\ProductFunctions.cs",
+              "RelativeToolTip": "CLDV6212POE_Functions\\ProductFunctions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:43:55.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:44:09.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-13T19:44:29.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwB4AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-13T19:44:34.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Models\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Models\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T20:05:03.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Product.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Models\\Product.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T20:05:10.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AddProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\AddProduct.cshtml",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Views\\Product\\AddProduct.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\AddProduct.cshtml",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Views\\Product\\AddProduct.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAwwCcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-13T20:05:30.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "host.json",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\host.json",
+              "RelativeDocumentMoniker": "CLDV6212POE_Functions\\host.json",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\host.json",
+              "RelativeToolTip": "CLDV6212POE_Functions\\host.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-13T20:14:25.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\Program.cs",
+              "RelativeDocumentMoniker": "CLDV6212POE_Functions\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\Program.cs",
+              "RelativeToolTip": "CLDV6212POE_Functions\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T20:17:06.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BlobService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Services\\BlobService.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Models\\Services\\BlobService.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Services\\BlobService.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Models\\Services\\BlobService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:42:47.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TableStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Services\\TableStorageService.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Models\\Services\\TableStorageService.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Models\\Services\\TableStorageService.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Models\\Services\\TableStorageService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwOkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:04:03.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EditProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\EditProduct.cshtml",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Views\\Product\\EditProduct.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\EditProduct.cshtml",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Views\\Product\\EditProduct.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwDIAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-14T12:43:44.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ViewProduct.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\ViewProduct.cshtml",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Views\\Product\\ViewProduct.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\ViewProduct.cshtml",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Views\\Product\\ViewProduct.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-14T12:57:42.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-14T13:44:46.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\OrderFunctions.cs",
+              "RelativeDocumentMoniker": "CLDV6212POE_Functions\\OrderFunctions.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\OrderFunctions.cs",
+              "RelativeToolTip": "CLDV6212POE_Functions\\OrderFunctions.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAYwJkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:02:16.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FileFunction.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\FileFunction.cs",
+              "RelativeDocumentMoniker": "CLDV6212POE_Functions\\FileFunction.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212POE_Functions\\FileFunction.cs",
+              "RelativeToolTip": "CLDV6212POE_Functions\\FileFunction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:02:22.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEgAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-14T18:27:50.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\appsettings.json",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\appsettings.json",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-14T19:05:09.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Program.cs",
+              "RelativeDocumentMoniker": "CLDV6212_POE_ST10435542\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive - ADvTECH Ltd\\Desktop\\vcnmb-cldv6212-2025-poe-natheerjardien\\CLDV6212_POE_ST10435542\\CLDV6212_POE_ST10435542\\Program.cs",
+              "RelativeToolTip": "CLDV6212_POE_ST10435542\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwF0AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T19:16:33.174Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
